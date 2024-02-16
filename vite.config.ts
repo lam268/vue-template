@@ -10,6 +10,10 @@ export default defineConfig({
     vue(),
     AutoImport({
       resolvers: [ElementPlusResolver()],
+      eslintrc: {
+        enabled: true, // <-- this
+      },
+      dts: true
     }),
     Components({
       resolvers: [ElementPlusResolver()],
