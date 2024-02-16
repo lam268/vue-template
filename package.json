@@ -6,15 +6,29 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js, jsx,ts,tsx}": [
+      "eslint --quiet --fix"
+    ],
+    "*.{json,js,ts,jsx,tsx,html}": [
+      "prettier --write --ignore-unknown"
+    ]
   },
   "dependencies": {
     "element-plus": "^2.5.5",
     "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
     "vue": "^3.4.15"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.3",
+    "husky": "^9.0.11",
+    "pinst": "^3.0.0",
     "typescript": "^5.2.2",
     "unplugin-auto-import": "^0.17.5",
     "unplugin-vue-components": "^0.26.0",
